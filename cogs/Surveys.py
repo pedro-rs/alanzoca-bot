@@ -41,7 +41,7 @@ class CreatingSurvey(Survey):
         self.channel = channel
         self.server = server
         self.inputing_options = False       # True when user is in the process of inputing options
-    
+        
 
 def generate_percentage(num):
     display = ""

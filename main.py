@@ -1,6 +1,3 @@
-# TODO : catch "command not found" exceptions
-# TODO : faça o teste do "!translate pt ent" (com um "t" msm) o bot para de funfar :( F bot
-
 import os, discord, asyncio
 from pathlib import Path
 from discord.ext import commands
@@ -44,7 +41,7 @@ async def on_command_error(ctx, error):
     if isinstance(error, commands.CheckFailure):
         pass # These are handled by the extensions individually
     elif isinstance(error, commands.CommandNotFound):
-        ctx.send("Hmm, não conheço esse comando. Se quiser ver meus comandos, envie `!help`")
+        await ctx.send("Hmm, não conheço esse comando. Se quiser ver meus comandos, envie `!help`")
     else:
         await ctx.send(f"Oops, algo deu errado.\nErro: {error}", delete_after=10)
         print(f"[Erro: {error}] @ {datetime.now().strftime('%H:%M:%S')}")
